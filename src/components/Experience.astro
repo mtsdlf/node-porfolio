@@ -1,0 +1,38 @@
+---
+import ExperienceItem from '../components/ExperienceItem.astro'
+const EXPERIENCE = [
+    {
+        company: "DirMod",
+        link: "https://dirmod.com",
+        date: "OCT-2022 -> TODAY",
+        title: "DevOps",
+        description:
+            "Monitoring Leader, I am the company's specialist in providing observability solutions. I give both consulting to the pre-sales projects and implementation of the solutions. I had an initial role in DevOps to the development teams. Subsequently, I became the company's expert in providing observability solutions. Currently working on the account of AySA and Poder Judicial (Government)."
+    },
+    {
+        company: "Huawei Tech investments LTD",
+        link: "https://huaweicloud.com",
+        date: "MAR-2022 -> MAR-2022",
+        title: "Solution Architect",
+        description: "Delivery Manager, I led a new team to have the ability to provide technical consulting in Cloud for cloud deployment operations. I had experience in overseeing the Nominee Accounts, from very diverse industries and platforms."
+    },
+    {
+        company: "MetLife S.A.",
+        link: "https://dirmod.com",
+        date: "MAR-2021 -> MAR-2022",
+        title: "Infrastructure Engineer",
+        description: "I was a key member in the company, providing the Product Owners with the resources to be able to carry out the Applications projects, I made Application Inventories, which have a direct impact on the company's costs.  I managed the infrastructure and was part of the Approval of changes circuit. I had experience using ServiceNow, working remotely in many parts of the world with people from Europe, USA, and India."
+    }
+]
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">                  
+   {
+    EXPERIENCE.map((experience) => (
+        <li class="mb-10 ms-4">
+            <ExperienceItem { ... experience} /> 
+        </li>
+    ))
+   }
+</ol>
+

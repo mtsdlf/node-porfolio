@@ -1,82 +1,88 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro'
 import Badge from '../components/Badge.astro'
+import SocialPill from '../components/SocialPill.astro'
+import LinkedInIcon from '../components/icons/LinkedIn.astro'
+import GitHubIcon from '../components/icons/Github.astro'
+import WhatsappIcon from '../components/icons/Whatsapp.astro'
+import MailIcon from '../components/icons/Mail.astro'
+import Experience from '../components/Experience.astro'
+import SectionContainer from '../components/SectionContainer.astro'
+import BriefCaseIcon from '../components/icons/BriefCase.astro'
+import CodeIcon from '../components/icons/Code.astro'
 ---
 
-<Layout title="Portfolio Personal">
-	<main>
-		<section class="w-full lg:w-[740px] mx-auto py-44">
-			<img class="rounded-full w-12 h-12 mb-4"
-			src="https://media.licdn.com/dms/image/D4D03AQGKwdt6JKEx8Q/profile-displayphoto-shrink_800_800/0/1698968415477?e=1710979200&v=beta&t=UZBZcy3S_qfvsqQ6zBvZBdx7Dh6rSl8qe64-sHAYajM"
-			alt="Matias Photo" 
+<Layout 
+	title="Portfolio de Matias De La Fuente - Desarrollador y programador"
+	description='Contrata a Matias de La Fuente, desarrollador y Programador'
+>
+	<main class="px-4">
+		<SectionContainer class="py-44 pb-32">
+			<img
+				class="rounded-full size-12 mb-4"
+				src="https://media.licdn.com/dms/image/D4D03AQGKwdt6JKEx8Q/profile-displayphoto-shrink_800_800/0/1698968415477?e=1710979200&v=beta&t=UZBZcy3S_qfvsqQ6zBvZBdx7Dh6rSl8qe64-sHAYajM"
+				alt="Matias Photo"
 			>
-		
-			<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
-				Hola! Soy Matias "Dela"
+			<h1 
+				class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+			>
+				Hola! Soy Matias
 				<a 
-				href="https://www.linkedin.com/in/matias-dela/"
-				target="_blank"
-				rel="noopener"
-				class="flex justify-center items-center">
-					<Badge>Disponible para trabajar</Badge>
+					href="https://www.linkedin.com/in/matias-dela/"
+					target="_blank"
+					rel="noopener"
+					class="flex justify-center items-center hover:scale-105 transition|">
+					<Badge>Disponible para trabajar</Badge>	
 				</a>
 			</h1>
-			<h2 class="text-xl">+10 años de experiencia</h2>
-			<h3>Full-Stack Developer
-				Cloud Solution Architect
-				Dev Ops</h3>
-		</section>		
+			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+				<span>
+					+10 años de experiencia
+				</span>
+				<span>
+					Full-Stack Developer
+					Cloud Solution Architect
+					Dev Ops
+				</span>
+				<span class="text-sky-300/95">
+					De Buenos Aires, Argentina
+				</span>
+				<span class="opacity-75">
+					Especializado en sarasa
+				</span>
+			</h2>
+			<nav class="flex gap-4 mt-8 flex-wrap">
+				<SocialPill href="https://www.linkedin.com/in/matias-dela/"> 
+					<LinkedInIcon class="size-4 md:size-6" />
+					LinkedIn
+				</SocialPill>
+				<SocialPill href="https://github.com/mtsdlf/"> 
+					<GitHubIcon class="size-4 md:size-6" />
+					GitHub	
+				</SocialPill>	
+				<SocialPill href="https://wa.link/uh57or" >
+					<WhatsappIcon class="size-4 md:size-6" />
+					Whatsapp
+				</SocialPill>
+				<SocialPill href="mailto:mts.dlf@gmail.com" >
+					<MailIcon class="size-4 md:size-6" />
+					mts.dlf@gmail.com
+				</SocialPill>
+			</nav>
+		</SectionContainer>		
+		<SectionContainer id="experiencia">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<BriefCaseIcon class="size-7"/>
+				Experiencia Laboral
+			</h2>
+			<Experience />
+		</SectionContainer>
+		<SectionContainer id="proyectos">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<CodeIcon class="size-7"/>
+				Proyectos
+			</h2>
+			<Experience />
+		</SectionContainer>
 	</main>
 </Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
-</style>
