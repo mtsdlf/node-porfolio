@@ -1,4 +1,17 @@
 ---
+const TAGS = {
+    ASTRO: { 
+        name: "Astro",
+        class: "bg-black text-white",
+        icon: "s"
+    },
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-white text-[#73bcf6]",
+        icon: "s"
+    }
+}
+
 const PROJECTS = [
     {
         title: "as",
@@ -14,14 +27,20 @@ const PROJECTS = [
 {
     PROJECTS.map(({title, description, image, tags}) => (
         <article>
-        <h3>{title}</h3>
-        <p>{description}</p>
+        <h3 class="text-2xl font-semibold text-sky-200 mb-2">{title}</h3>
+        <p class=" text-lg mb-4 text-balance">{description}</p>
         <ul>
             {tags.map(tag => (
-                <li>{tag}</li>
+                <li>
+                    <span class=" ">
+                        <tag.icon class="size-4" />
+                        {tag.name}
+                    </span>
+                </li>
             ))}
         </ul>
         <img
+            class="rounded shadow-2xl shadow-white/10"
             src={image}
             alt={`Captura de pantalla del proyecto ${title}`}
             >
